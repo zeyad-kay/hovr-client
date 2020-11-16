@@ -1,0 +1,21 @@
+.jumbotron{
+    margin: 0;
+}
+.home-section{
+    background-image: linear-gradient(to right,#fff,#f7f7fa);
+}
+.services-section{
+    background-image: linear-gradient(to right,#fff,#f7f7fa);
+}
+.contact-section{
+    background-image: linear-gradient(to right,#fff,#f7f7fa);
+}
+.features-section{
+    background-color: #EDF5F9;
+}
+.packages-section{
+    background-color: #EDF5F9;
+}
+.footer-section{
+    background-color: #EDF5F9;
+}

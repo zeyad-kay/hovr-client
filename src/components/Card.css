@@ -1,0 +1,12 @@
+.card{
+    border-radius: 20px;
+}
+.card-img{
+    width: 4rem;
+    height: 4rem;
+}
+.card-title h3{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
