@@ -9,7 +9,7 @@ export class Marker extends Component {
         this.renderFunction = this.renderFunction.bind(this);
     }
     renderFunction(parentMap,fakeProps) {
-        const marker = new window.google.maps.Marker({
+        new window.google.maps.Marker({
             position: fakeProps.location,
             map: parentMap,
         });

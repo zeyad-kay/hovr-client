@@ -1,8 +1,8 @@
 import Navigation from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 import './Navbar.css';
-import Button from './Button';
+import Button from '../Button/Button';
 
 function Navbar() {
   return (
@@ -15,7 +15,7 @@ function Navbar() {
       <Navigation.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto" id="navbarNav">
           <Nav.Link className="nav-item" href="/calculate">
-            <Button style={{color:'red'}}>Calculate Price</Button>
+            <Button>Calculate Price</Button>
           </Nav.Link>
           <Nav.Link className="nav-item" href="/signup">Signup</Nav.Link>
           <Nav.Link className="nav-item" href="/login">Login</Nav.Link>

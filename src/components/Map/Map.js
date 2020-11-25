@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { MapStyle } from '../lib/MapStyle';
+import React, { useEffect} from 'react';
+import { MapStyle } from '../../lib/MapStyle';
 
 const Map = (props) => {
 
@@ -42,9 +42,9 @@ const Map = (props) => {
                 position: (props.zoomControlOptions && props.zoomControlOptions.position) ? mapFakeControlToRealControl[props.zoomControlOptions.position] : undefined
             },
             mapTypeControl: props.mapTypeControl,
-            MapTypeControlOptions: {
+            mapTypeControlOptions: {
                 ...props.MapTypeControlOptions,
-                position: (props.MapTypeControlOptions && props.MapTypeControlOptions.position) ? mapFakeControlToRealControl[props.MapTypeControlOptions.position] : undefined
+                position: (props.mapTypeControlOptions && props.mapTypeControlOptions.position) ? mapFakeControlToRealControl[props.mapTypeControlOptions.position] : undefined
             },
             streetViewControl: props.streetViewControl,
             streetViewControlOptions: {
@@ -52,7 +52,7 @@ const Map = (props) => {
                 position: (props.streetViewControlOptions && props.streetViewControlOptions.position) ? mapFakeControlToRealControl[props.streetViewControlOptions.position] : undefined
             },
             rotateControl: props.rotateControl,
-            RotateControlOptions: {
+            rotateControlOptions: {
                 ...props.RotateControlOptions,
                 position: (props.RotateControlOptions && props.RotateControlOptions.position) ? mapFakeControlToRealControl[props.RotateControlOptions.position] : undefined
             },
@@ -62,9 +62,9 @@ const Map = (props) => {
                 position: (props.scaleControlOptions && props.scaleControlOptions.position) ? mapFakeControlToRealControl[props.scaleControlOptions.position] : undefined
             },
             fullscreenControl: props.fullscreenControl,
-            FullscreenControlOptions: {
-                ...props.FullscreenControlOptions,
-                position : (props.FullscreenControlOptions && props.FullscreenControlOptions.position) ? mapFakeControlToRealControl[props.FullscreenControlOptions.position] : undefined
+            fullscreenControlOptions: {
+                ...props.fullscreenControlOptions,
+                position : (props.fullscreenControlOptions && props.fullscreenControlOptions.position) ? mapFakeControlToRealControl[props.fullscreenControlOptions.position] : undefined
             
             }
         });
