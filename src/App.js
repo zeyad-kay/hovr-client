@@ -8,6 +8,7 @@ import Calculator from './routes/Calculator';
 import Home from './routes/Home';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
+import Dashboard from './routes/Dashboard';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/signup">
           <Signup />
+        </Route>
+        <Route exact path="/dashboard">
+          <Dashboard />
         </Route>
         <Route exact path="/login">
           <Login />

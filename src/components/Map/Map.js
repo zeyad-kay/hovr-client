@@ -1,17 +1,20 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { MapStyle } from '../../lib/MapStyle';
 
 const Map = (props) => {
-
-    const apiKey = "AIzaSyCiTLGY-VT1wXA5nAxintHLkVcoTWoZk9Y";
+    const [loaded, setLoaded] = useState(false);
+    const API_KEY = "";
     // const dispatch = useDispatch();
 
     useEffect(() => {
         renderMap();
     });
     const renderMap = () => {
-        window.initMap = initMap;
-        loadScript(`https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`);
+        // if (!loaded) {
+            window.initMap = initMap;
+            loadScript(`https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`);
+            setLoaded(true);
+        // }
     }
 
     const initMap = () => {
@@ -54,7 +57,7 @@ const Map = (props) => {
             rotateControl: props.rotateControl,
             rotateControlOptions: {
                 ...props.RotateControlOptions,
-                position: (props.RotateControlOptions && props.RotateControlOptions.position) ? mapFakeControlToRealControl[props.RotateControlOptions.position] : undefined
+                position: (props.rotateControlOptions && props.rotateControlOptions.position) ? mapFakeControlToRealControl[props.rotateControlOptions.position] : undefined
             },
             scaleControl: props.scaleControl,
             scaleControlOptions: {
@@ -64,8 +67,8 @@ const Map = (props) => {
             fullscreenControl: props.fullscreenControl,
             fullscreenControlOptions: {
                 ...props.fullscreenControlOptions,
-                position : (props.fullscreenControlOptions && props.fullscreenControlOptions.position) ? mapFakeControlToRealControl[props.fullscreenControlOptions.position] : undefined
-            
+                position: (props.fullscreenControlOptions && props.fullscreenControlOptions.position) ? mapFakeControlToRealControl[props.fullscreenControlOptions.position] : undefined
+
             }
         });
         //make any drawing on map either it marker or somthing else 
@@ -81,7 +84,7 @@ const Map = (props) => {
 
     return (
         <main>
-            <div id="map" style={{height: "100vh"}}></div>
+            <div id="map" style={{ height: "100vh" }}></div>
         </main>
     );
 }
@@ -89,6 +92,7 @@ const Map = (props) => {
 export default Map;
 
 function loadScript(url) {
+    console.log('loading');
     const index = window.document.getElementsByTagName("script")[0];
     const googleMapScript = window.document.createElement("script");
     googleMapScript.src = url;

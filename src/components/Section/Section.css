@@ -1,5 +1,6 @@
 .jumbotron{
     margin: 0;
+    text-align: center;
 }
 .home-section{
     background-image: linear-gradient(to right,#fff,#f7f7fa);
